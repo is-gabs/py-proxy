@@ -2,6 +2,7 @@ import mock
 import pytest
 
 from py_proxy import main
+from py_proxy.handler import DefaultHandler
 
 
 @pytest.fixture
@@ -25,7 +26,9 @@ def test_should_call_tornado_application(
     mock_ioloop
 ):
     main()
-    mock_application.assert_called_once()
+    mock_application.assert_called_once_with(
+        handlers=[(r'.*', DefaultHandler)]
+    )
 
 
 def test_should_call_app_listen_with_port(
