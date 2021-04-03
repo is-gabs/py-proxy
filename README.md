@@ -13,5 +13,14 @@ The motivation to do this project was some issues with wip apis.
 * Environment: Docker
 
 
-### How to start:
+### How to run:
+#### In you workstation:
+Install requirements:  
+`pip install -r requirements.txt`
+>Tip: Do it into a [virtualenv](https://docs.python.org/3/library/venv.html)
+
+Run api:
+`python app.py`
+
+#### From docker container:
 WIP
