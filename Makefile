@@ -1,9 +1,3 @@
-export PYTHONDONTWRITEBYTECODE=1
-
-
-env = development
-
-
 clean:
 	@find . -name "*.pyc" | xargs rm -rf
 	@find . -name "*.pyo" | xargs rm -rf
@@ -17,12 +11,12 @@ clean:
 	@rm -f *.log.*
 
 flake8:
-	@flake8 --show-source .
+	@poetry run flake8 --show-source .
 
 check-python-import:
-	@isort --check .
+	@poetry run isort --check .
 
 fix-python-import:
-	@isort .
+	@poetry run isort .
 
 lint: clean flake8 check-python-import
